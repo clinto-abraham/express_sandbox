@@ -1,0 +1,938 @@
+<body>
+    <section id="exportContent" class="full-section">
+      <%- include('./partials/header_absa.ejs') %>
+      <div>
+        <div style="text-align: center;">
+          <p style="font-weight: 400; font-size: 30px; color: #DC0032;font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">
+            Home/Equity Loan Agreement
+          </p>
+        </div>
+        <div>
+          <table width="100%">
+            <tr style="margin-bottom:10pt;">
+              <td width="50%">
+                <p style="font-weight: 400;"></p>
+              </td>
+              <td width="50%">
+                <p style="text-align: right; font-weight: 400;">
+                  Reference No: <%= referenceNo ? referenceNo : '' %>
+                </p>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <br />
+          <br />
+        </div>
+  
+  
+        <p style="margin-top: 3.8pt;  margin-right: 1pt;  margin-bottom: 0pt;">
+          <%= ApplicantPersonalDetails['Title'] ? ApplicantPersonalDetails['Title'] : 'Mr./Mrs.' %>
+          <%= metaData['Primary Applicant Name'] ? metaData['Primary Applicant Name'] : '' %>
+        </p>
+        <p style="margin-top: 3.8pt;  margin-right: 1pt;  margin-bottom: 0pt;">
+          Address:
+        </p>
+        <p style="margin-top: 3.8pt;  margin-right: 1pt;  margin-bottom: 0pt;">
+          <%= ApplicantPersonalDetails['Residential Address Line 1'] ? ApplicantPersonalDetails['Residential Address Line 1'] + "," : ApplicantPersonalDetails['Postal Address Line 1'] ? ApplicantPersonalDetails['Postal Address Line 1'] + ",": '' %>
+        </p>
+        <p style="margin-top: 3.8pt;  margin-right: 1pt;  margin-bottom: 0pt;">
+          <%= ApplicantPersonalDetails['Residential Address Line 2'] ? ApplicantPersonalDetails['Residential Address Line 2'] + "," : ApplicantPersonalDetails['Postal Address Line 2'] ? ApplicantPersonalDetails['Postal Address Line 2'] + ",": '' %>
+        </p>
+        <p style="margin-top: 3.8pt;  margin-right: 1pt;  margin-bottom: 0pt;">
+          <%= ApplicantPersonalDetails['Residential Address Line 3'] ? ApplicantPersonalDetails['Residential Address Line 3'] + "." : ApplicantPersonalDetails['Postal Address Line 3'] ?  ApplicantPersonalDetails['Postal Address Line 3'] + "." : '' %>
+        </p>
+  
+        <p style="margin-top: 3.8pt;  margin-right: 1pt;  margin-bottom: 0pt;">
+          <%= SecondaryApplicant['Title'] ? SecondaryApplicant['Title'] : '' %>
+          <%= SecondaryApplicant['First Name'] ? SecondaryApplicant['First Name'] : '' %>
+          <%= SecondaryApplicant['Family Name'] ? SecondaryApplicant['Family Name'] : '' %>
+        </p>
+  
+        <br />
+        <br />
+  
+        <p style="margin-top: 3.8pt;  margin-right: 1pt;  margin-bottom: 0pt;">
+          Dear
+          <%= ApplicantPersonalDetails['Title'] ? ApplicantPersonalDetails['Title'] : 'Mr/Mrs' %>
+          <%= ApplicantPersonalDetails['Family Name'] ? ApplicantPersonalDetails['Family Name'] : '' %>
+        </p>
+        <p style="margin-top: 3.8pt;  margin-right: 1pt;  margin-bottom: 0pt;"> <br /> </p>
+        <p style="margin-top: 3.8pt;  margin-right: 1pt;  margin-bottom: 0pt;">Your Home/Equity loan reference -
+          <%= referenceNo ? referenceNo : '' %>
+        </p>
+        <p>We, Absa Bank (Mauritius) Limited are pleased to confirm the terms on which we are prepared to provide you a /an [Home][Equity] Loan – to be edited by underwriting (the “Loan”):</p>
+        <br />
+        <br />
+        <table cellspacing="0" cellpadding="0" style="width:475.65pt; border:0.75pt solid #000000; -aw-border:0.5pt single; -aw-border-insideh:0.5pt single #000000; -aw-border-insidev:0.5pt single #000000; border-collapse:collapse">
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Loan reference</p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                <%= referenceNo ? referenceNo : '' %>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Loan amount </p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                MUR <%= LoanAmount['Total loan amount'] ? LoanAmount['Total loan amount'] : '' %>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Borrower, You</p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top:0pt; margin-left:8.75pt; margin-bottom:10pt; line-height:150%; font-size:10pt">
+  
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+  
+                Applicant(s) Personal Details
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Primary Applicant:
+  
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                <%= ApplicantPersonalDetails['Title'] ? ApplicantPersonalDetails['Title'] : 'Mr/Mrs' %>
+                <%= ApplicantPersonalDetails['First Name'] ? ApplicantPersonalDetails['First Name'] : '' %>
+                <%= ApplicantPersonalDetails['Family Name'] ? ApplicantPersonalDetails['Family Name'] : '' %>
+              </p>
+  
+  
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Job title:
+                <%= ApplicantEmployerDetails['Job title'] ? ApplicantEmployerDetails['Job title'] : '' %>
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;"><span style="-aw-import:spaces">
+                  Residential Address :
+  
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;"><span style="-aw-import:spaces">
+  
+                  <%= ApplicantPersonalDetails['Residential Address Line 1'] ? ApplicantPersonalDetails['Residential Address Line 1'] : '' %>
+  
+              </p>
+  
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;"><span style="-aw-import:spaces">
+                  <%= ApplicantPersonalDetails['Residential Address Line 2'] ? ApplicantPersonalDetails['Residential Address Line 2'] : '' %>
+              </p>
+  
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;"><span style="-aw-import:spaces">
+  
+                  <%= ApplicantPersonalDetails['Residential Address Line 3'] ? ApplicantPersonalDetails['Residential Address Line 3'] : '' %>
+  
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Secondary Applicant:
+  
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                <%= SecondaryApplicant['Title'] ? SecondaryApplicant['Title'] : '' %>
+                <%= SecondaryApplicant['First Name'] ? SecondaryApplicant['First Name'] : '' %>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Ancillary facility(ies) / other credit facilities</p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Ancillary facilities
+                <%= ANCILLARY_FACILITIES['Facility Type'] ? ANCILLARY_FACILITIES['Facility Type'] : '' %>
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">You will comply with and undertake not to breach, the terms and conditions of any of the Ancillary facilities.</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Purpose</p>
+              <br />
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                <%= metaData['Purpose of facility']? metaData['Purpose of facility'] : ''  %>
+  
+              </p>
+              <br />
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Guarantor (person providing additional security for the Loan)</p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Details of Guarantor(s):
+              </p>
+  
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Name:
+                <%= GuarantorDetails['Name'] ? GuarantorDetails['Name'] : 'NA' %>
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Occupation:
+                <%= GuarantorDetails['Occupation'] ? GuarantorDetails['Occupation'] : 'NA' %>.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Personal contribution to Purpose (“Contribution”)</p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Contribution:
+                <%= metaData['Contribution'] ? metaData['Contribution'] : 'N/A' %>
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Total contribution:
+                <%= TotalContribution ? `MUR ${TotalContribution}` : 'N/A' %>
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Contribution for land:
+                <%= ContributionForLand ? `MUR ${ContributionForLand}` : 'N/A' %>
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Contribution for construction:
+                <%= ContributionforConstructionAmount ? `MUR ${ContributionforConstructionAmount}` : 'N/A' %>
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Contribution for other projects:
+                <%= ContributionForOtherProjectsAmount ? `MUR ${ContributionForOtherProjectsAmount}` : 'N/A' %>
+              </p>
+  
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="padding: 5px;">
+                Annual % interest rate
+              </p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Interest rate per annum:
+                <%= metaData['Interest rate per annum'] ? metaData['Interest rate per annum'] : '' %>
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Monthly Budget Planner-Interest rate:
+                <%= MONTHLY_BUDGET_PLANNER['Interest Rate'] ? `${MONTHLY_BUDGET_PLANNER['Interest Rate']} %` : '' %>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="padding: 5px;">
+                Total amount of interest
+              </p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Insert currency :
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Insert amount :
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                – to be filled by underwriting, as set out in the amortisation table relating to your Loan. The amount of interest is the applicable amount of interest as at the date of this Agreement calculated based on the current Prime Lending Rate or Key Rate (as applicable) and based on the assumption that you will repay all the Instalments on time. If the Reference Rate changes or if you fail to repay your Instalments on time, the amount of interest will be subject to change.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="padding: 5px;">Instalment amount </p>
+              <p style="padding: 5px;">For the first [x] months of the tenor of the loan<br />instalment amount (Interest Only):</p>
+              <p style="padding: 5px;"> <br /> </p>
+              <p style="padding: 5px;"> <br /> </p>
+              <p style="padding: 5px;"> <br /> </p>
+              <p style="padding: 5px;"> <br /> </p>
+              <p style="padding: 5px;">After disbursement of full loan amount:</p>
+              <p style="padding: 5px;">Instalment </p>
+              <p style="padding: 5px;">Monthly Instalment date:</p>
+              <p style="padding: 5px;"> <br /> </p>
+              <p style="padding: 5px;"> <br /> </p>
+              <p style="padding: 5px;"> <br /> </p>
+              <p style="padding: 5px;">The Instalment will vary if we approve a lower Loan Amount; and / or in line with the changes in the Interest Rate. </p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Repayment of the Loan Amount shall be made as follows:</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">For the first [x – to be filled by underwriting] months of the tenor of the Loan</p>
+              <ol type="i">
+                <li style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Interest shall be paid monthly starting from the date of disbursement of the first tranche, at an amount of to be filled by underwriting. </li>
+                <li style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">A full Instalment shall only be due after disbursement of the full Loan Amount, which should in any event, not be later than 12 months from the first disbursement date. </li>
+              </ol>
+              <p style="margin-top:0pt; margin-left:26.75pt; margin-bottom:10pt; line-height:115%; font-size:9pt"> <br /> </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Insert currency – to be filled by underwriting
+  
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+  
+                Monthly budget planner – Loan Amortisation:
+                <%= MONTHLY_BUDGET_PLANNER['Loan Amortisation'] ? `MUR ${MONTHLY_BUDGET_PLANNER['Loan Amortisation']}` : '' %>
+                per month
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;"> <br /> </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">If Loan or any part is drawn:</p>
+              <ul type="disc">
+                <li style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">On or before 15<span style="font-size:10pt; vertical-align:super">th </span>- same month </li>
+                <li style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">After 15<span style="font-size:6pt; vertical-align:super">th </span>- following month; [insert date – to be filled by underwriting]</li>
+              </ul>
+              <br />
+              <br />
+              <br />
+              <br />
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Term of the Loan (in months)</p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Monthly Budget Planner - Duration in months:
+                <%= MONTHLY_BUDGET_PLANNER['Duration in months'] ? MONTHLY_BUDGET_PLANNER['Duration in months'] : '' %>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Fee</p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">A one-off facility fee of
+                INDICATIVE CHARGES, Facility fee
+                <%= INDICATIVE_CHARGES['Facility fee (1% of loan amount with a minimum MUR'] ? INDICATIVE_CHARGES['Facility fee (1% of loan amount with a minimum MUR'] : '' %>
+                will be debited from your Account.
+  
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">A maintenance fee of MUR 60 (inclusive of VAT) will be debited from your Account. </p>
+  
+              <br />
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Loyalty Fee</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">A discount of MUR [to be filled by underwriting] pertaining to the following charges namely [to be filled by underwriting], are being granted to you and is referred in this Agreement as “loyalty fees”.</p>
+              <br />
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">The following fees will be debited from your Account.</p>
+              <ul type="disc">
+                <li>Valuation fee: As levied by the Bank’s approved valuer.</li>
+                <li>Registration charges: As levied by the Registrar in addition to the stamp duty</li>
+                <li>Security charges: MUR 1,500</li>
+                <li>Notary fees:
+  
+  
+                  <%= INDICATIVE_CHARGES['Notary fees (1% on 1st Rs100k, 0.5% on the differe'] ? INDICATIVE_CHARGES['Notary fees (1% on 1st Rs100k, 0.5% on the differe'] : '' %>
+                  as applicable
+                </li>
+              </ul>
+              <br />
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Any other charge including search fees and abstract of title, where applicable.</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Security</p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Type of Security:
+                <%= TypeOfSecurity ? TypeOfSecurity : '' %>
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;"> <br /> and, if possible, the date on which the Security is signed must also be included – to be filled by underwriting ]</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">TO DELETE IF NOT APPLICABLE: For Security on Leasehold land, you will provide a confirmation to our satisfaction that the remaining tenor of the lease is at least 50 years as from date of your first disbursement -to be filled by underwriting if applicable ]</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Additional security</p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">[Insert additional security (guarantees, investments or assets) if necessary. Include the exact reference to the additional security agreement, so that the terms and conditions upon which the additional security was granted can be ascertained and, if possible, the date on which the additional security is signed must also be included for the same reasons – to be filled by underwriting]</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Loan to Value ratio</p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                LTV Ratio:
+                <%= metaData['LTV Ratio'] ? metaData['LTV Ratio'] : '' %>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Conditions Precedent to Disbursement(s) (conditions to be met before the loan amount will be paid out)</p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Conditions Precedent:
+                <%= PrecedentDataString ? PrecedentDataString : '' %>
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Credit card liabilities held with the
+                Institution:
+                <%= metaData['Institution where credit card liabilities are held'] ? metaData['Institution where credit card liabilities are held'] : '' %>
+                to be repaid in full from own funds. Certificate from the
+                Institution where credit card liabilities are held :
+                <%= metaData['Institution where credit card liabilities are held'] ? metaData['Institution where credit card liabilities are held'] : '' %>
+                confirming credit card liabilities in their books have been cleared and cancelled.</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Loan liabilities held with
+  
+                <%= metaData['Institution where loan liabilities are held'] ? metaData['Institution where loan liabilities are held'] : '' %>
+                to be repaid in full from own funds. Certificate from the
+                <%= metaData['Institution where loan liabilities are held'] ? metaData['Institution where loan liabilities are held'] : '' %>
+                confirming loan liabilities in their books have been cleared.</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Overdraft liabilities held with :
+                <%= metaData['Institution where overdraft liabilities are held'] ? metaData['Institution where overdraft liabilities are held'] : '' %>
+                to be repaid in full from own funds. Certificate from the :
+                <%= metaData['Institution where overdraft liabilities are held'] ? metaData['Institution where overdraft liabilities are held'] : '' %>
+                confirming loan liabilities in their books have been cleared.</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Hire Purchase liabilities held with
+                <%= metaData['Institution where hire purchase liabilities are held'] ? metaData['Institution where hire purchase liabilities are held'] : '' %>
+                to be repaid in full from own funds. Certificate from the
+                <%= metaData['Institution where hire purchase liabilities are held'] ? metaData['Institution where hire purchase liabilities are held'] : '' %>
+                confirming loan liabilities in their books have been cleared.</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Perfection of Lien on Credit Balance for MUR
+  
+                Amount of lien on credit balance :
+                <%= metaData['Amount of lien on credit balance'] ? metaData['Amount of lien on credit balance'] : '' %>
+              </p>
+  
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;"> Number of months: <%= metaData['Number of months'] ? metaData['Number of months'] : '' %> (equivalent to months’ loan repayments) on a new ‘debt service reserve account’, to be opened in your name in our books</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Option 1 - Construction</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">If your Loan Amount is to be used to build, renovate or repair a home on your property, or renovate or repair your apartment, your Loan Amount will, subject to the progress made in relation to the Purpose, be disbursed to you in [x – to be filled by underwriting] tranches, each not exceeding [x% - to be filled by underwriting] of your Loan Amount;</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Documents to be submitted:
+                <%= DocsToBeSubmittedStr ? DocsToBeSubmittedStr : '' %>
+              </p>
+  
+  
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Should a Default occur in relation to the Loan Facility granted to Mr/Mrs
+  
+                <%= metaData['Customer Name'] ? metaData['Customer Name'] : '' %>
+                bearing reference :
+                <%= metaData['Reference'] ? metaData['Reference'] : '' %>
+                by the Bank, it shall constitute a Default under the present Agreement.</p>
+              <br />
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Detailed estimation of construction costs registered architect/building engineer/quantity surveyor of at least MUR :
+  
+                <%= metaData['Estimation of construction costs'] ? metaData['Estimation of construction costs'] : '' %>
+              </p>
+              <br />
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Valuation report addressed to the Bank, by Bank’s approved valuation officers, confirming the market value of freehold residential property offered as security to be at least MUR:
+                <%= metaData['Market value of freehold residential property'] ? metaData['Market value of freehold residential property'] : '' %>
+                before drawdown of loan. This certificate should also include an estimate of the Borrower’s property to be at least MUR :
+  
+                <%= metaData['Estimate of property after construction'] ? metaData['Estimate of property after construction'] : '' %>
+                after construction. (One original of such report shall remain in the possession of the Bank).</p>
+              <br />
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Valuation report addressed to the Bank, by Bank’s approved valuation officers, confirming the market value of freehold residential property offered as security to be at least :
+  
+                <%= metaData['Market value of freehold residential property'] ? metaData['Market value of freehold residential property'] : '' %>
+                after renovation after renovation. (One original of such report shall remain in the possession of the Bank).</p>
+              <br />
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Your first tranche will only be paid to you once we receive:</p>
+              <ul type="disc">
+                <li>
+                  Precedent:
+                  <%= metaData['PrecedentDataString'] ? metaData['PrecedentDataString'] : '' %>
+                </li>
+              </ul>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Further tranches will only be disbursed to you once we receive:</p>
+              <ul type="disc">
+                <li>photos and a report from your registered architect, building engineer or quantity surveyor indicating:</li>
+              </ul>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">-
+  
+                Progress of building,</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">- Total amount spent on building to date of request for further payment; and</p>
+              <p>- Estimate of amount needed to complete building.</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Option 2 – Purchase</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">If your Loan Amount is to be used to purchase a land and/or building or apartment your Loan Amount will only be disbursed to you once we receive:</p>
+              <br />
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">A site/location plan by a sworn land surveyor.</p>
+              <br />
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Confirmation to the satisfaction of the Bank that remaining tenor of lease is at least 50 years as from date of first disbursement.</p>
+              <ul type="disc">
+                <li>Valuation report addressed to the Bank, by Bank’s approved valuation officers, confirming the market value of freehold residential property being acquired offered as security to be at least MUR
+  
+                  Market value of residential property:
+                  MUR <%= ResidentialMarketValueAmount ? ResidentialMarketValueAmount : '' %> before drawdown of loan. (One original of such report shall remain in the possession of the Bank)</li>
+              </ul>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Submission of draft deed of sale in name of
+                Draft deed of sale in name of:
+                <%= metaData['Draft deed of sale in name of'] ? metaData['Draft deed of sale in name of'] : '' %>
+                for MUR
+                Draft deed of sale (Value) :
+                <%= draftDeedSaleAmount ? draftDeedSaleAmount : '' %>
+                prepared by a notary recognised by us.</p>
+  
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Option 3</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">If your Loan Amount is to be used to re-finance your existing loan currently with another bank or financial institution, with us, your Loan Amount will only be paid to that other bank or financial institution once we receive:</p>
+              <br />
+            </td>
+          </tr>
+          <tr>
+            <td style="width:223.15pt; border-right-style:solid; border-right-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-right:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Other specific conditions applicable to the Loan</p>
+            </td>
+            <td style="width:230.15pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; padding-right:5.03pt; padding-left:5.03pt; vertical-align:top; -aw-border-bottom:0.5pt single; -aw-border-left:0.5pt single">
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Assignment of insurance cover – to be filled by underwriting</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Option 1: Insert detail of specific conditions under the Housing Empowerment Scheme – to be filled by underwriting </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Option 2: Upon resignation or termination of your employment with this Bank - to be filled by underwriting </p>
+              <ol type="i">
+                <li>all outstanding amounts on your loan Account shall bear interests at the prevailing commercial rate, based on the customer segment you will belong to. </li>
+              </ol>
+              <br />
+              <ol start="2" type="i">
+                <li>the Loan will be re-amortised on your exit date, based on the outstanding balance on the loan Account, the new applicable interest rate and the remaining tenor of your loan. </li>
+              </ol>
+              <br />
+              <ol start="3" type="i">
+                <li>your revised Instalment shall then be duly communicated to you.</li>
+              </ol>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;"> <br /> [Option 3 (if Borrower is benefitting from a preferential interest rate based on the customer segment to which he belongs) – to be filled by underwriting <br /> </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">The Bank is granting you the present credit facility at a special interest rate because of the customer segment to which you belong at the time of the offer of the facility. Should you move to another customer segment during the term of the Loan, the Bank reserves the right to review the interest rate. If it proceeds as such (to be filled by underwriting), :</p>
+              <ol type="i">
+                <li>all outstanding amounts on your Account shall bear interests at the prevailing commercial rate based on your new customer segment;</li>
+                <li>The Loan will be re-amortised
+  
+                  on the date you change customer segment, based on the outstanding balance on the Account, the new applicable interest rate, your maximum Debt Service Ratio and the remaining tenor of your Loan;</li>
+                <li>Your revised Instalment shall then be duly communicated to you. </li>
+                <li>The Bank shall notify you of the changes 30 days before the changes take effect. </li>
+              </ol>
+              <ul type="disc">
+                <li>Option 4: OTHER CONDITIONS APPLICABLE TO THE LOAN</li>
+              </ul>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Additional Conditions Precedent (Sanctioner):
+                <%= metaData['Dedupe check done.  If yes, which product was approved:'] ? metaData['Dedupe check done.  If yes, which product was approved:'] : '' %>
+              </p>
+              <ul type="disc">
+                <li>Conditions Subsequent</li>
+                <li>Following repayment of existing loan by the Bank, below-listed documents to be provided:</li>
+                <li>Certificate from
+  
+                  the Certificate from:
+                  <%= metaData['Certificate from:'] ? metaData['Certificate from:'] : '' %>
+                  confirming liabilities in their books have been cleared.</li>
+                <li>Submission of letter from
+  
+                  Submission of letter from:
+                  <%= metaData['Submission of letter from:'] ? metaData['Submission of letter from:'] : '' %>
+                  certifying that charges in their favour will be erased or copy of letter of erasure addressed to the conservator of mortgage, within three weeks of receipt of cheque from the Bank.</li>
+              </ul>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+  
+  
+  
+                <%= metaData['Percentage'] 
+                    ? `Loan will be released in tranches, each of no more than ${metaData['Percentage']} % of the Loan amount after your own contribution of ${metaData['Contribution:']} `
+                  : '' %>
+  
+  
+  
+  
+              </p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">First tranche shall be released upon submission of construction cost estimates to the satisfaction of the Bank.</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">Subsequent tranches to be released upon submission of registered architects/building engineers/quantity surveyors showing progress of works, amount spent to date and projected expenditure to completion to the satisfaction of the Bank.</p>
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">The Bank reserves the right to review the terms and conditions of the loan agreement or recall the whole facility should the bank be made aware, at any point in time during the term of the Agreement, of any adverse information surrounding the Borrower or Borrower’s employment situation.</p>
+              <br />
+              <p style="margin-top: 0pt; margin-left: 8.75pt;  margin-bottom: 10pt;">
+                Payment of MUR to be filled by underwriting
+                MUR <%= PaymentFromLoanProceedsAmount ? PaymentFromLoanProceedsAmount : '' %>
+                from Loan Proceeds and
+                MUR <%= PaymentFromContributionAmount ? PaymentFromContributionAmount : '' %>
+                from your own contribution in favour of notary to be effected by the Bank. Where the Borrower makes payment directly to the notary, he shall produce evidence of such payment to the satisfaction of the Bank, prior to first disbursement.
+              </p>
+            </td>
+          </tr>
+        </table>
+        <p><br style="page-break-before:always; clear:both" /></p>
+        <p style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">Home/Equity Loan Agreement</p>
+        <br />
+        <p>This Agreement is to be read with the Personal Customer Agreement. You acknowledge that your failure to comply with any terms and conditions of the Personal Customer Agreement will result in a default under the terms of this Agreement. </p>
+        <br />
+        <ol type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">
+            How our Loan works</li>
+        </ol>
+        <p>Your Contribution should not be borrowed from any financial institution including those financial institutions not regulated by the Bank of Mauritius.</p>
+        <br />
+        <p>You will repay us by making the Instalments over an agreed period, with interest. You will also pay us the Fees and Charges associated with the Loan.</p>
+        <br />
+        <p>You agree to only use the Loan Amount for the Purpose stated above. We reserve the right to request evidence that the Loan Amount has been/is being used for the Purpose. Should we determine, at our sole discretion, that the Loan Amount, or any part thereof, has not been used for the Purpose, we reserve the right to cancel the Loan and demand immediate repayment of all amounts disbursed under the Loan.</p>
+        <br />
+        <p>Prior to disbursement of the Loan Amount: </p>
+        <p>You can withdraw from this Agreement at any time as long as the Loan Amount has not been disbursed. The Bank will charge you an administrative fee in that respect.</p>
+        <br />
+        <p>In the event that the Conditions Precedent to Disbursement have not been satisfied or the facility has not been disbursed because of your acts and/or omissions within ninety (90) days as from signature of this Agreement or any such period of time as agreed between the Bank and you, the Bank reserves the right to cancel the Loan and withdraw from this Agreement at any time prior to the disbursement of the Loan Amount. The Bank will notify you at least 14 days before the cancellation takes effect. If you do not want the Loan to be cancelled, the Bank reserves the right to re-assess and review the terms and conditions of the Loan and to request that you submit a fresh application.</p>
+        <br />
+        <p>The Bank reserves the right to review and re-assess the terms and conditions of the Loan or rescind the whole agreement prior to drawdown of the loan should the Bank be made aware of any adverse information surrounding the Borrower’s situation, which in the opinion of the Bank has or is reasonably likely to have a material adverse effect on your ability to perform any of your obligations under this Agreement.</p>
+        <br />
+        <ol start="2" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">
+  
+            Our Agreement</li>
+        </ol>
+        <p>In the rest of these terms we refer to:</p>
+        <ul type="disc">
+          <li>this Loan agreement as this ‘Agreement’;</li>
+          <li>the asset given as security as the ‘Property’; and</li>
+          <li>your transactional bank account with us as ‘your Account’. </li>
+        </ul>
+        <br />
+        <p>The Loan shall be available for the first drawdown for a period of 3 months, from the date of your acceptance of the terms of this Agreement.</p>
+        <p style="margin-top:0pt; margin-bottom:0pt; text-indent:19.85pt; text-align:justify; line-height:normal; font-size:10pt"> <br /> </p>
+        <ol start="3" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">Your Loan Amount</li>
+        </ol>
+        <p>You agree that your Loan Amount will be either:</p>
+        <ul type="disc">
+          <li>The amount you applied for; or </li>
+          <li>such lower amount as we may determine following an assessment of your ability to repay your Loan Amount, provided that this amount will not be more than 60% or 70% or 80% of our valuation of the Property (as may be applicable to your case). </li>
+        </ul>
+        <br />
+        <p>You will be required to open a transactional account with us if you do not already have one and you will be required to deposit enough funds in that account so that we can deduct any upfront fees before we will make the Loan available to you. If you are employed, your salary must be paid into your Account during the term of this Agreement unless your employer deducts your Instalments from your salary before it is paid to you. If you are self-employed, your business income must be routed to your Account during the term of this Agreement. If, during the Term of the Loan, the payment of your salary or income into your Account is stopped or discontinued, the Bank reserves the right to re-assess the terms and conditions of the Loan, including but not limited to the interest rate.</p>
+        <br />
+        <p>We will make payment of your Loan Amount, or any tranche thereof, to your nominated payees/beneficiaries upon successful transcription of your sale deed or registration of the Security at the Conservator of Mortgages (as may be applicable to your case), and/or upon us being satisfied that you have met the Conditions Precedent to Disbursement.</p>
+        <br />
+        <p>If we require you to pay off an existing debt to a credit provider as a condition of your Loan, you must obtain a statement for us from the credit provider showing how much is required to pay off the debt, and we will give you a cheque (or make a direct payment) to the credit provider, and pay any remainder of your Loan to you.</p>
+        <br />
+        <p>You agree to notify us in writing if you take up additional credit facilities with another credit provider during the term of this Agreement.</p>
+        <br />
+  
+        <ol start="4" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">Instalments </li>
+        </ol>
+        <p>You must pay the Instalments to repay the Loan Amount. Your Instalments will be deducted from your Account, by debit order, on a monthly basis on the agreed Instalment date. You acknowledge that based on your actual date of disbursement of the Loan, there may be a residual amount left unpaid after the repayment of your last instalment and you undertake to repay us such residual amount.</p>
+        <br />
+        <p>You agree to tell us and any additional credit providers if you are unable to pay an Instalment on the Instalment date (including the reason why you are not able to pay the Instalment). You must seek our agreement regarding arrangements for the payment of the Instalment in default.</p>
+        <br />
+        <p>If we need to change the date of your Instalment, we will notify you at least 7 business days before the date upon which the change will occur. </p>
+        <br />
+        <p>If any sum falls due for payment on a day which is not a Business Day it shall be made on the immediately preceding Business Day. </p>
+        <br />
+        <ol start="5" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">
+            Interest, fees and costs</li>
+        </ol>
+        <p>You agree to pay Interest, Fees and Costs as stated or referred to in this Agreement and the Personal Customer Agreement.</p>
+        <br />
+        <p>You will pay interest on your Loan Amount, for the period of this Agreement, starting on the day that the Loan Amount is paid out to you. Interest will be calculated daily, on the outstanding balance of the Loan Amount, and will be charged to the Loan Account on a monthly basis.</p>
+        <br />
+        <p>The interest rate on your Loan Amount is variable and will change as the reference rate changes. The reference rate can be either our “Prime Lending Rate” or the “Key Rate”. If the Reference Rate is less than zero, the Interest shall be deemed to be zero.</p>
+        <br />
+        <p>Depending on our prevailing offer, we may agree that a fixed interest rate be applied to your Loan Amount for a certain period. When the period of your fixed interest rate expires, the interest rate applicable to your Loan Amount will automatically change to the Variable Interest Rate in this Agreement, unless we have agreed to extend the fixed rate period.</p>
+        <br />
+        <p>You will be notified by us, of changes in our Reference Rate and the adjusted amount of your Instalment within at least 45 days after the changes take effect. In the event that our Reference Rate is increased, you have the option of deciding whether to either increase your monthly Instalment or extend the Term of the Loan, keeping your monthly Instalment unchanged, provided such extension of Term would not exceed your retirement age. In the event that our Reference Rate is decreased, you have the option of either maintaining the Term of the Loan by requesting a revised monthly Instalment amount or you can decrease the Term of the Loan by retaining the agreed monthly Instalment amount. </p>
+        <br />
+        <p>If you default, you will pay a default interest rate of 2 per cent, wherever applicable, calculated on the default instalment capital excluding interest payable thereon. To the extent that Section 16(3) of the Borrower Protection Act is applicable, you will not pay a default interest.</p>
+        <br />
+        <ol start="6" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">Security </li>
+        </ol>
+        <p>You understand that it is a condition of this Agreement that you provide us with the Property as Security and any Additional Security (where necessary).</p>
+        <br />
+        <p>Any breach or default of any term or condition contained in the Security or Additional Security documentation shall be considered a default under this Agreement.</p>
+        <br />
+        <p>You may be requested to cancel any existing security which burdens the Property. Any asset used as Security or Additional Security for your Loan Amount may not be used as security for any other purpose or transaction without our written consent. </p>
+        <br />
+        <p>Where the requested Security is a charge over the Property, you understand that our attorneys will draft the necessary documentation and attend to the registration of the charge at your cost. </p>
+        <br />
+        <p>If you choose not to accept this Agreement, after we have approved your Loan Amount but before the Security is registered or recorded against the Property, you will be responsible for the administrative and related costs incurred by us during that time. </p>
+        <br />
+        <p>We may request, at any time during the term of this Agreement, that the Property and any Additional Security be evaluated, by our approved valuer, at your cost. We may require you to provide us with further Additional Security during the term of this Agreement if we believe that the Property and any Additional Security provided are no longer sufficient. </p>
+        <br />
+        <ol start="7" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">Property</li>
+        </ol>
+        <p>You understand that we require the Property to be valued by our approved valuer, at your cost, to enable us to assess the value of our Security. This valuation does not include an inspection on the structural condition or any other condition of the Property by us. You agree that such valuation fee is to be paid upfront into your Account with us, and is not refundable.</p>
+        <br />
+        <p>You agree that it is your responsibility to maintain the quality of the Property and to ensure that no changes, relating to the usage, zoning or anything that may negatively affect the Property, are made to the Property without our prior written consent. If we agree to any change to the Property, you must notify us in writing of the changes made to the Property and adjust your insurance policy to accommodate the changes made to the Property accordingly. The Bank reserves the right to re-evaluate the Property as and when it is deemed required during the Term of the Loan. This valuation may include an inspection of the Property. The Bank will give you at least 7 days’ notice before doing such a valuation to which you hereby give your consent. Any such revaluation may be done at your costs.</p>
+        <br />
+        <p> <br /> </p>
+        <ol start="8" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">Transfer of rights by you to us involving the Property</li>
+        </ol>
+        <p>You agree to pledge any rentals or other income receivable from the Property being acquired in favour of the bank until final repayment of your Loan. The Bank may apply its right of set-off against such rentals or income receivable in case of default on your Loan.</p>
+        <br />
+        <p>If the Property is acquired by government or any third party rights are registered against the Property during this Agreement, you agree to transfer, as additional security, all claims (including compensation) as a result of the acquisition or third party rights registration against the Property. The additional security will however be limited to the outstanding amount on your Loan.</p>
+        <br />
+        <ol start="9" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">Transfer of our rights and obligations in terms of this Agreement</li>
+        </ol>
+        <p>You agree that we may, at any time, transfer any or all of our rights and obligations as per the terms and conditions of this Agreement, including the Security and the Additional Security, to a third party of our choice. </p>
+        <br />
+        <ol start="10" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;"> Insurance </li>
+        </ol>
+        <p>You understand that it is an additional condition of this Agreement that you take up a Decreasing Term Assurance for a minimum amount corresponding to your Loan amount, to insure against the possibility of your death or total and permanent disability during the term of this Agreement. You are also required to take up, where applicable, Fire and Allied Perils Insurance (in respect of the Property) for an amount not less than the value of the replacement cost of the Property for the term of this Agreement. </p>
+        <br />
+        <p>You will be required to provide us with proof that you have taken up the required insurance policies and you agree to pay the said insurance premiums on a monthly or yearly basis, as may be applicable, for the duration of this Agreement. The proceeds of the insurance policies will be assigned to us.</p>
+        <br />
+        <p>Pursuant to Section 81 of the Insurance Act 2005, you have a free choice as to the insurance policy required to guarantee this Loan. The insurance policy to be provided can take the form of (1) a new insurance policy; (2) an existing insurance policy; or (3) a combination of the aforementioned two. By signing this Agreement, you hereby confirm that you have been informed of your right to this free choice under Section 81 of the Insurance Act 2005 and that you have exercised this right freely and willingly.</p>
+        <br />
+        <p>In the event that you fail to renew or maintain the required insurance cover during the term of this Agreement, you authorise us to pay the insurance premium on your behalf by debiting your Account or your Loan account.</p>
+        <br />
+        <p>You will be required to set up a standing order in respect of the insurance premiums to be paid from your Account.</p>
+        <br />
+        <p>In lieu of assigning the proceeds of a Decreasing Term Assurance, you also have the option of assigning in our favour the proceeds of any other Life Insurance cover, acceptable to us.</p>
+        <br />
+        <p>You will notify us of any event which may give rise to a claim under any insurance policy assigned with respect to your Loan.</p>
+        <br />
+        <ol start="11" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">
+            Pre-payments and paying off your Loan Account early</li>
+        </ol>
+        <p>At any time you can pay Instalments early or pay the outstanding balance of your Loan Account in full.</p>
+        <br />
+        <p>If you want to pay off the full outstanding balance you must inform us, and we will give you a statement telling you how much you owe. </p>
+        <br />
+        <br />
+        <br />
+        <br />
+        <ol start="12" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;"> Default </li>
+        </ol>
+        <p>You will be in default under the terms of this Agreement if:</p>
+        <ol type="a">
+          <li>
+  
+            Non-Payment: you do not pay an Instalment in full by the Instalment date and such failure to pay continues for a period of:
+            <ol type="i">
+              <li> three (3) months if Instalments must be repaid on a monthly basis; or </li>
+              <li> six (6) months if Instalments must be repaid at intervals other than on a monthly basis; or</li>
+            </ol>
+          </li>
+          <li>
+  
+            Obligations under the Finance Documents: You do not comply with your obligations under the Finance Documents;</li>
+          <li>
+  
+            Other Obligations: You do not comply with your obligations under any other credit facilities and/or ancillary facilities agreements which you already have with us and/or which you may have with us after signature of this Agreement;</li>
+          <li>
+  
+            Bankruptcy/Insolvency:
+            <ol type="i">
+              <li>
+                You are deemed to be bankrupt;</li>
+              <li>
+  
+                We have reason to believe that an Obligor is, or is likely to become, bankrupt of insolvent;</li>
+              <li>
+  
+                An Obligor is unable, or admits inability to pay its debts when due or suspends making payment on any of its debts; or by reason of actual or anticipated financial difficulties, commences negotiations with one or more of his creditors with a view to rescheduling any of his indebtedness;</li>
+              <li>
+  
+                The value of the assets of an Obligor is less than its liabilities (considering contingent and prospective liabilities);</li>
+            </ol>
+          </li>
+          <li> A decision of a competent authority is delivered against an Obligor’s assets;</li>
+          <li> Misrepresentation: Any representation, warranty or undertaking made by you or the Guarantor in the Finance Documents or any other document delivered by or on your behalf or on behalf of the Guarantor under or in connection with any Finance Document is or proves to have been incorrect or misleading in any material respect when made or deemed to be made.; is not complied with; or ceases to be true;</li>
+          <li>
+            Unlawfulness and invalidity:
+            <ol type="i">
+              <li> It is or it becomes unlawful for an Obligor to perform any of your obligations under the Finance Documents;</li>
+              <li> Any obligation or obligations of any Obligor under any Finance Documents are not or cease to be legal, valid, binding or enforceable and the cessation individually or cumulatively materially and adversely affects the interests of the Bank under the Finance Documents;</li>
+              <li>
+                Any Finance Document ceases to be in full force and effect or is alleged by a party to it (other than the Bank) to be ineffective;</li>
+            </ol>
+          </li>
+          <li> Repudiation: An Obligor rescinds or purports to rescind or repudiates or purports to repudiate a Finance Document or evidences an intention to rescind or repudiate a Finance Document;</li>
+          <li>Litigation: Any litigation, arbitration, administrative, governmental, regulatory or other investigations, proceedings or disputes are commenced or threatened in relation to the Finance Documents or the transactions contemplated in the Finance Documents or against any Obligor or its assets which have or are reasonably likely to have a Material Adverse Effect. </li>
+          <li> Material Adverse Effect: Any event or circumstance occurs which the Bank reasonably believes has or is reasonably likely to have a Material Adverse Effect. </li>
+        </ol>
+        <p>In this Agreement, unless the context otherwise requires the following definitions shall apply:</p>
+        <br />
+        <p>“Finance Document” means this Agreement, the Personal Customer Agreement, any security document entered into in relation to this Loan and any other document designated as such by the Bank and the Borrower.</p>
+        <br />
+        <p>“Material Adverse Effect” means in the reasonable opinion of the Bank, a material adverse effect on:</p>
+        <ol type="a">
+          <li> the business, operations, property, condition (financial or otherwise) or prospects of any party to this Agreement or the Finance Documents; or</li>
+          <li>
+  
+            the ability of any Obligor to perform any of its obligations under the Finance Documents; or</li>
+          <li>
+            the validity or enforceability of any of the Finance Documents or the rights or remedies of the Bank under any of the Finance Documents.</li>
+        </ol>
+        <p>“Obligor” means the Borrower, the Guarantor(s) (if named in the Commercial Terms) and any other person who has given a guarantee or security relating to this Agreement. </p>
+        <ol start="13" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;"> Consequences of Default</li>
+        </ol>
+        <p>If you default in any of your obligations under this Agreement or any agreement governing an existing/Ancillary facility with us, we have the right to contact any referee, employer or the Mauritius Credit Information Bureau and to make any such enquiry or disclosure as may be deemed appropriate by us.</p>
+        <br />
+        <p>If you default in any of your obligations under this Agreement or any agreement we may end this Agreement by written notification to you requiring you to pay the full outstanding balance of your Loan Account within 14 business days after the delivery of the notification, with Interest charged at the Default Interest Rate, Fees and Costs. On the expiry of this notification we may exercise our rights in terms of the Security and Additional Security provided under this Agreement.</p>
+        <br />
+        <p>In the context of a default, you will be responsible for the attorney's fees reasonably expended by us by way of court initiated proceedings in order to recover any outstanding balance of the Loan Account.</p>
+        <br />
+        <ol start="14" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;"> Disclosure to guarantors</li>
+        </ol>
+        <p>The below part concerns the guarantors and is aligned to the requirement of the Guideline on Disclosure of Information to Guarantors as issued by the Bank of Mauritius. </p>
+        <br />
+        <h4> As a guarantor, your rights in relation and liabilities are as follows:</h4>
+  
+        <p style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">Your rights</p>
+        <ol type="a">
+          <li>Request for a copy of the contract pertaining to the above security signed by yourself at any time on or after signature of the contract;</li>
+          <li>Make enquiries from the MCIB on information which has been registered in your name by the Bank;</li>
+          <li>Make a complaint if you feel aggrieved by the acts or omissions of the Bank by calling our Service Centre on the (+230) 402 1000;</li>
+          <li>Submit a request for a statement of account related to the credit facility at any time during the credit facility period;</li>
+          <li>Seek legal advice pertaining to the above security to understand the commitment and the potential consequences of entering into this contract at your own cost and expenses.</li>
+        </ol>
+  
+        <p style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">Your Liabilities</p>
+        <ol type="a">
+          <li>You have bound yourself for the Borrower’s debt and you undertake to honour the credit obligations of the Borrower in case of impaired credits;</li>
+          <li>In case the Borrower fails to pay, you are liable for Borrower’s debt which may include accrued interest, as specified in the contract pertaining to the security;</li>
+          <li>In case the Borrower fails to pay, you are liable for the liabilities of the Borrower pertaining to the security and;</li>
+          <li>You will be rendered liable under the contract if the Borrower is in default of any payment to the Bank and the Bank makes a demand on the Guarantor.</li>
+        </ol>
+        <br />
+        <br />
+        <br />
+        <br />
+        <ol start="15" type="1">
+          <li style="color: #DC0032; font-weight: 700; font-size: 15px; font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;"> Validity of Offer</li>
+        </ol>
+  
+        <div>
+          <p>Please sign and return the Agreement within 15 days from the date of this offer, to confirm acceptance of the terms mentioned therein.</p>
+        </div>
+  
+  
+  
+  
+        <table width="100%" border="0" cellpadding="3" cellspacing="0">
+          <tr style="margin-bottom:10pt;">
+            <td width="50%">
+              <p style="font-weight: 700; margin-top: 30px;">
+                ______________________________
+              </p>
+              <p style="font-weight: 400;">
+                Signed at
+              </p>
+            </td>
+            <td width="50%">
+              <p style="font-weight: 700; margin-top: 30px;">
+                ______________________________
+              </p>
+              <p style="font-weight: 400;">
+                Signed on
+              </p>
+            </td>
+          </tr>
+          <tr style="margin-bottom:10pt;">
+            <td width="50%">
+              <p style="font-weight: 700; margin-top: 30px;">
+                ______________________________
+              </p>
+              <p style="font-weight: 400;">
+                Borrower signature
+              </p>
+            </td>
+            <td width="50%">
+              <p style="font-weight: 700; margin-top: 30px;">
+                ______________________________
+              </p>
+              <p style="font-weight: 400;">
+                Witness signature
+              </p>
+            </td>
+          </tr>
+          <tr style="margin-bottom:10pt;">
+            <td width="50%">
+              <p style="font-weight: 700; margin-top: 30px;">
+                ______________________________
+              </p>
+              <p style="font-weight: 400;">
+                Name & title
+              </p>
+            </td>
+            <td width="50%">
+              <p style="font-weight: 700; margin-top: 30px;">
+                ______________________________
+              </p>
+              <p style="font-weight: 400;">
+                Name & title
+              </p>
+            </td>
+          </tr>
+          <tr style="margin-bottom:10pt;">
+            <td width="50%">
+              <p style="font-weight: 700; margin-top: 30px;">
+                ______________________________
+              </p>
+              <p style="font-weight: 400;">
+                Guarantor signature
+              </p>
+            </td>
+            <td width="50%">
+              <p style="font-weight: 700; margin-top: 30px;">
+                ______________________________
+              </p>
+              <p style="font-weight: 400;">
+                Witness signature
+              </p>
+            </td>
+          </tr>
+          <tr style="margin-bottom:10pt;">
+            <td width="50%">
+              <p style="font-weight: 700; margin-top: 30px;">
+                ______________________________
+              </p>
+              <p style="font-weight: 400;">
+                Name & Title
+              </p>
+            </td>
+            <td width="50%">
+              <p style="font-weight: 700; margin-top: 30px;">
+                ______________________________
+              </p>
+              <p style="font-weight: 400;">
+                Name & Title
+              </p>
+            </td>
+          </tr>
+  
+  
+          <tr style="margin-bottom:10pt;">
+            <td width="50%">
+              <p style="font-weight: 700; margin-top: 30px;">
+                ______________________________
+              </p>
+              <p style="font-weight: 400;">
+                Bank authorised signature
+              </p>
+            </td>
+            <td width="50%">
+              <p style="font-weight: 700; margin-top: 30px;">
+                ______________________________
+              </p>
+              <p style="font-weight: 400;">
+                Bank authorised signature
+              </p>
+            </td>
+          </tr>
+  
+        </table>
+  
+        <div style="-aw-headerfooter-type:footer-primary; clear:both">
+          <p style="margin-top:0pt; margin-bottom:0pt; line-height:115%; font-size:7pt">
+            <!-- <img src="" width="672" height="33" alt="" style="margin:3.6pt 9pt; -aw-left-pos:-23.5pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:14.7pt; -aw-wrap-type:square; float:left; position:relative" /> -->
+          </p>
+        </div>
+      </div>
+  
+      <%- include('./partials/footer_absa.ejs') %>
+    </section>
+  </body>
