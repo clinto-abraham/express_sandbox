@@ -1,4 +1,6 @@
-const convertToPDFByPuppeteer = (dataRendered, local_file_path, headerTemplate, footerTemplate)=>{
+'use strict';
+
+const createPDF = (dataRendered, local_file_path, headerTemplate, footerTemplate)=>{
     return new Promise(async (resolve, reject) => {
         const puppeteer = require('puppeteer');
         const browser = await puppeteer.launch();
@@ -29,7 +31,7 @@ const convertToPDFByPuppeteer = (dataRendered, local_file_path, headerTemplate, 
         }
   
         const result = await page.pdf(config);
-        console.log('convertToPDFByPuppeteer', result)
+        console.log('createPDF', result)
         resolve({
             success: 1,
             message: 'Successfully converted data into pdf file',
@@ -40,4 +42,6 @@ const convertToPDFByPuppeteer = (dataRendered, local_file_path, headerTemplate, 
     })
 }
 
-module.exports = convertToPDFByPuppeteer;
+module.exports = {
+    createPDF
+};

@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Absa Statement</title>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('/fonts/Source_Sans_Pro/sourcesanspro-bold-webfont.woff2') format('woff2'),
+                url('/fonts/Source_Sans_Pro/sourcesanspro-bold-webfont.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.woff2') format('woff2'),
+                url('/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('/fonts/Source_Sans_Pro/sourcesanspro-semibold-webfont.woff2') format('woff2'),
+                url('/fonts/Source_Sans_Pro/sourcesanspro-semibold-webfont.woff') format('woff');
+            font-weight: 600;
+            font-style: normal;
+
+        }
+
+        body {
+            position: relative;
+            color: #000000;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            /* font-size: 12px; */
+            text-rendering: optimize-speed;
+            -webkit-print-color-adjust: exact !important;
+        }
+
+        /* .footer-fixed-wealth {
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+		} */
+
+
+        .fn {
+            font-weight: normal !important;
+        }
+
+        /* table {
+				border-collapse: collapse;
+	
+			}
+	
+			tr {
+				page-break-inside: avoid;
+				page-break-after: auto
+			}
+	
+			thead th {
+				text-align: left;
+				font-size: 14px;
+				font-weight: 400;
+			} */
+
+        /* table { page-break-inside:auto; }
+			tr    { page-break-inside:avoid; page-break-after:auto }
+			thead { display:table-header-group }
+			tfoot { display:table-footer-group }         */
+        .page-break-after {
+            page-break-after: always;
+        }
+
+        .page-break-before {
+            page-break-before: always;
+        }
+
+        @media print {
+
+            /* table { page-break-after:auto }
+				tr    { page-break-inside:avoid; page-break-after:auto }
+				td    { page-break-inside:avoid; page-break-after:auto }
+				thead { display:table-header-group }
+				tfoot { display:table-footer-group } */
+            @page {
+                size: A4 !important;
+                /* padding-bottom: 20px !important;
+					padding-left: 20px !important;
+					padding-right: 20px !important; */
+                margin-top: 2mm;
+                margin-right: 3mm;
+                margin-bottom: 2mm;
+                margin-left: 3mm;
+            }
+
+            body {
+                position: relative;
+                color: #000000;
+                /* font-family: "Arial", sans-serif; */
+                font-size: 14px;
+            }
+
+            .page-break-after {
+                page-break-after: always;
+            }
+
+            .page-break-before {
+                page-break-before: always;
+            }
+
+            tfoot {
+                height: 100px;
+            }
+        }
+
+        .fixed-tfoot {
+            position: fixed;
+            bottom: -30px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        /* .fixed-thead {
+				position: fixed;
+				right: 0;
+				left: auto;
+				top: 0;
+				z-index: 999;
+			} */
+
+        /* .pt-80 {
+				padding-top: 80px;
+			} */
+
+        .fixed-tfoot .copyrights {
+            width: 21cm;
+            height: 29.7cm;
+            margin: 0 auto;
+            font-size: 10px;
+        }
+
+        tfoot {
+            height: 100px;
+        }
+
+        .fixed-tfoot tr td {
+            vertical-align: bottom;
+        }
+
+        table {
+            position: relative;
+            height: 100%;
+        }
+
+        /* .terms-content h3 {
+				font-size: 12px;
+			}
+	
+			.terms-content p {
+				font-size: 12px;
+				margin-bottom: 10px;
+			}
+	
+			.terms-content ul li {
+				font-size: 12px;
+				margin-bottom: 5px;
+			} */
+
+        .td-width {
+            width: 33.33% !important;
+            padding-right: 10px;
+        }
+
+        table tr td {
+            word-break: break-word;
+            word-wrap: break-word;
+        }
+
+        table tr td,
+        table tr th {
+            font-size: 12px;
+        }
+
+        table tr td h2 {
+            font-size: 12px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        table tr td h2.title {
+            font-size: 14px;
+        }
+
+        table tr td .label {
+            font-size: 10px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        table tr td .value {
+            font-size: 10px;
+            word-break: break-word;
+            word-wrap: break-word;
+        }
+
+        table tbody tr td {
+            vertical-align: top;
+        }
+
+
+        .terms-content * {
+            font-size: 8px !important;
+        }
+
+        .terms-content h2 {
+            font-size: 8px;
+            margin-top: 2.5px;
+            margin-bottom: 2.5px;
+        }
+
+        .terms-content h3 {
+            font-size: 8px;
+            margin-top: 2.5px;
+            margin-bottom: 2.5px;
+        }
+
+        .terms-content p {
+            font-size: 8px;
+            margin-top: 2.5px;
+            margin-bottom: 2.5px;
+        }
+
+        .terms-content ul {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .terms-content ul li,
+        .terms-content ol li {
+            font-size: 8px;
+            margin-bottom: 2.5px;
+        }
+
+        .row-wrapper {
+            display: block;
+            border-bottom: 1px dashed #d5d5d5;
+            clear: both;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .correspondence-addr .row-wrapper:last-child {
+            border-bottom: 0;
+        }
+
+        .row-wrapper .tr-row {
+            display: table;
+            width: 100%;
+        }
+
+        .row-wrapper .tr-row .td-width {
+            display: table-cell;
+            vertical-align: top;
+            max-width: 33.33% !important;
+            width: 33.33% !important;
+            min-width: 33.33% !important;
+        }
+
+        .thead-group {
+            display: table-header-group;
+        }
+
+        /* .tfooter-group {
+			display: table-footer-group;
+		} */
+        .page-footer {
+            position: fixed;
+            bottom: 15px;
+            width: 100%;
+            left: 10px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <table width="100%" border="0" cellpadding="3" cellspacing="0" class="page-break-before"
+        style="padding: 35px 40px;padding-bottom: 50px;">
+        <!-- <thead class="thead-group">
+            <tr>
+                <th style="padding-top: 15px; text-align: right">
+                    <div class="header-wrap">
+                        <div class="logo">
+                            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGZpbGw9IiNBQTFFMkEiIGQ9Ik0yOS43NDUsMzYxLjc1OWM0MC45MDgsODcuODA5LDEyOS4zODQsMTQ0LjE5NCwyMjYuMjQyLDE0NC4xOTRjOTYuODYyLDAsMTg1LjMzNi01Ni4zODYsMjI2LjI0NS0xNDQuMTk0DQoJCWwtMjguMjg4LTEzLjE4NGMtMzUuODUsNzYuNzE5LTExMy4yMiwxMjUuOTY1LTE5Ny45MDcsMTI1Ljk2NWMtODQuNjg0LDAtMTYyLjA1LTQ5LjI0Ni0xOTcuOTAxLTEyNS45NjVMMjkuNzQ1LDM2MS43NTkNCgkJTDI5Ljc0NSwzNjEuNzU5eiBNNDYxLjI1MSwxODEuNTA0YzE3LjQ3Niw0OC4yNzMsMTcuNDc2LDEwMS4xNzYsMCwxNDkuNDQ4bDI5LjMyMSwxMC42OTNjMjAuMDA2LTU1LjE3OCwyMC4wMDYtMTE1LjY1NSwwLTE3MC44MzENCgkJTDQ2MS4yNTEsMTgxLjUwNEw0NjEuMjUxLDE4MS41MDR6IE01MC43MiwxODEuNTA0bC0yOS4xOTMtMTAuNjg5Yy0xOS45OTcsNTUuMTc2LTE5Ljk5NywxMTUuNjUzLDAsMTcwLjgzMWwyOS4zMjQtMTAuNjkzDQoJCWMtMTcuNTEtNDguMjY3LTE3LjUxLTEwMS4xOCwwLTE0OS40NDhINTAuNzJMNTAuNzIsMTgxLjUwNHogTTMxMy4yMTcsMjQ0LjY4NmMtMTEuMTY4LTAuMTgzLTE4LjE3Ni0wLjM4MS0xOC4xNzYtNi40MzUNCgkJYzAtNy45MzgsNC43MzktOS42MjYsMTkuMTExLTkuNjI2YzkuNjgyLDAuMiwxOS4zMTksMS4zOTksMjguNzU4LDMuNTc4bC0yLjA4OS0yMS41NTNjLTkuMjc1LTIuNzQyLTE4Ljg4Ny00LjIwNi0yOC41NjItNC4zNg0KCQljLTMxLjM4NSwwLTQzLjQ4NywxMS4zNjYtNDMuNDg3LDMyLjc3M2MwLDIwLjYyNSwxMi42MDUsMjUuOTEyLDM0LjAzMywyNi4yOTRjMTMuODE2LDAuMjAzLDIwLjk5Ni0wLjE3NiwyMC45OTYsOC45MDYNCgkJYzAsNy45MzYtNi4yNDcsOS42MjQtMTkuNjU5LDkuNjI0Yy0xMS4yODMsMC4xNzEtMjIuNTE0LTEuNDE3LTMzLjMwMi00LjcxN2wyLjA5MSwyMS41NTljMTAuNjUyLDMuODg2LDIxLjkzOCw1Ljc0NywzMy4yNzksNS40ODgNCgkJYzMzLjQ3NSwwLDQzLjg5Mi0xMS4zNjMsNDMuODkyLTMxLjc4M2MwLTI1LjcxNi0xNi44NDMtMjkuMzIyLTM2Ljg4OC0yOS42OTl2LTAuMDQ5SDMxMy4yMTd6IE00MDAuODI2LDIwNi4yODkNCgkJYy05Ljk5OSwwLjA4MS0xOS45MzEsMS41NDktMjkuNTI0LDQuMzZsLTIuMDY2LDIxLjU1M2M5LjQ0NC0yLjEwNiwxOS4wNjYtMy4zMDcsMjguNzQxLTMuNTc4YzEzLjYxLDAsMTkuMTEzLDEuMTM3LDE5LjExMywxMi4xMDINCgkJdjMuMDI0bC0xOC4xNTUsMC45MzZjLTIwLjE2NiwxLjEzLTM2Ljg4OSwzLjk4LTM2Ljg4OSwyOS42OTVjMCwyMC40MjIsMTAuMzkyLDMxLjc4OCw0MS44MDIsMzEuNzg4DQoJCWMxMy4zNzItMC4yMjQsMjYuNjMtMi40NiwzOS4zMjktNi42MjZ2LTYwLjUwNmMwLTIxLjM1Ni0xMS45MjEtMzIuNzc0LTQyLjM1MS0zMi43NzRWMjA2LjI4OUw0MDAuODI2LDIwNi4yODl6IE0xMDcuNTcxLDIwNi4yODkNCgkJYy05Ljk5NCwwLjA4MS0xOS45MjcsMS41NDktMjkuNTIxLDQuMzZsLTIuMDY4LDIxLjU1M2M5LjQ0Ny0yLjEwNiwxOS4wNjgtMy4zMDcsMjguNzM5LTMuNTc4YzEzLjYxNCwwLDE5LjExNCwxLjEzNywxOS4xMTQsMTIuMTAyDQoJCXYzLjAyNGwtMTguMTUzLDAuOTM2Yy0yMC4xNjcsMS4xMy0zNi44ODcsNC41MzYtMzYuODg3LDI5LjY5NWMwLDIwLjQyMiwxMC4zOTMsMzEuNzg4LDQxLjgwMSwzMS43ODgNCgkJYzEzLjM3LTAuMjI0LDI2LjYyNy0yLjQ2LDM5LjMyOC02LjYyNnYtNjAuNTA2YzAtMjEuMzU2LTExLjg5Ni0zMi43NzQtNDIuMzUzLTMyLjc3NFYyMDYuMjg5TDEwNy41NzEsMjA2LjI4OXogTTIxMi4zMjUsMjA2LjMxNA0KCQljLTYuMzA5LDAuMTQyLTEyLjU4NSwwLjkyNy0xOC43MzMsMi4zNDV2LTUyLjI2NGwtMjYuMDk1LDIuODIzdjE0MC4zMjVjMTIuNDU5LDQuMTEsMjUuNDYsNi4zNDUsMzguNTc0LDYuNjI2DQoJCWMzMS4zODcsMCw0OS45MTUtMTAuNjEyLDQ5LjkxNS00OS45NDRDMjU1Ljk4NywyMTYuOTA1LDIzNy40NTgsMjA2LjMxNCwyMTIuMzI1LDIwNi4zMTRMMjEyLjMyNSwyMDYuMzE0eiBNNDE3LjA5LDI4My4wOA0KCQljLTQuMTU4LDAuNzk5LTguMzczLDEuMjQxLTEyLjYwOSwxLjMzN2MtMTEuMzQ1LDAtMTYuMDgzLTMuNjA2LTE2LjA4My0xMS4zNDljMC04LjE0NSw0LjU2MS05LjQ1MSwxNC4wMS0xMC4wODlsMTQuNzU2LTAuOTI4DQoJCUw0MTcuMDksMjgzLjA4TDQxNy4wOSwyODMuMDh6IE0xMjMuODM1LDI4My4wOGMtNC4xNTYsMC43OTktOC4zNzIsMS4yNDEtMTIuNjA2LDEuMzM3Yy0xMS4zNDYsMC0xNi4wNTctMy42MDYtMTYuMDU3LTExLjM0OQ0KCQljMC04LjE0NSw0LjUzNS05LjQ1MSwxMy45ODctMTAuMDg5bDE0Ljc1Mi0wLjkyOEwxMjMuODM1LDI4My4wOEwxMjMuODM1LDI4My4wOHogTTIwOC4wOSwyODMuOTU3DQoJCWMtNC45MTgtMC4wMjItOS44MTItMC42NjMtMTQuNTctMS44ODh2LTUxLjUyOGM0Ljc2My0xLjIwOCw5LjY1Mi0xLjg1MywxNC41Ny0xLjkxN2MxNC4xNjcsMCwyMC45NzIsNi40MjYsMjAuOTcyLDI3LjczNQ0KCQljMCwyMS4zLTYuODA1LDI3LjcyOC0yMC45NzIsMjcuNzI4VjI4My45NTdMMjA4LjA5LDI4My45NTd6IE00ODIuMjMxLDE1MC42OTVDNDQxLjMyMyw2Mi44OTIsMzUyLjg0OSw2LjUwNywyNTUuOTg3LDYuNTA3DQoJCWMtOTYuODU3LDAtMTg1LjMzNCw1Ni4zODUtMjI2LjI0MiwxNDQuMTg4bDI4LjI4NywxMy4xOUM5My44ODgsODcuMTYzLDE3MS4yNTIsMzcuOTIsMjU1LjkzNSwzNy45Mg0KCQlzMTYyLjA1NCw0OS4yNDMsMTk3LjkwNywxMjUuOTY1TDQ4Mi4yMzEsMTUwLjY5NUw0ODIuMjMxLDE1MC42OTV6Ii8+DQo8L2c+DQo8L3N2Zz4NCg=="
+                                alt="Absa" width="60" />
+                        </div>
+                    </div>
+                </th>
+            </tr>
+        </thead> -->
+        <tbody>
+            <tr>
+                <td
+                    style="font-weight: 800; font-size: 20px; color: #DC0032;font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px; text-align: center;padding-bottom: 20px;">
+                    Salary Pledge
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="padding-bottom: 30px;">
+                        Date : ____________________
+                    </p>
+                    <p>
+                        To,
+                    </p>
+                    <p style="padding-bottom: 30px;line-height: 18px;">
+                        The Branch Manager <br />
+                        Absa Bank (Mauritius) Ltd
+                    </p>
+                    <p style="padding-bottom: 20px;">
+                        Dear Sir/Madam
+                    </p>
+                    <p style="line-height: 22px;padding-bottom: 12px">
+                        We confirm that <%- honorific %> <%- fullName %> with <%- (idType.toLowerCase()==="nic" ? "NIC"
+                                    : "Passport Number" ) %> <%- idNumber %>  has been working at <%- employerName %> since <%- dateOfJoining %> and is currently not serving
+                                    any notice period or going through any disciplinary action.
+                    </p>
+                    <p style="line-height: 22px;padding-bottom: 12px">
+                        We also confirm that arrangements have been made to direct the monthly salaries, along with all
+                        benefits, for the mentioned employee to Absa Bank (Mauritius) Ltd, crediting their bank account number <%- absaAccBranchCode %><%-
+                        absaAccNumber %> with immediate  effect.
+                    </p>
+                    <p style="padding-bottom: 12px;">
+                        It is understood that this arrangement shall not be altered without prior notification to Absa
+                        Bank (Mauritius) Ltd.
+                    </p>
+                    <p style="padding-bottom: 23px;">
+                        In case the above-named ceases to be in our employment,we shall advise you at our earliest
+                        convenience.
+                    </p>
+                    <p style="padding-bottom: 0px;margin-bottom: 0;">
+                        Yours faithfully,
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellpadding="6" cellspacing="0" >
+                        <tbody>
+                            <tr>
+                                <td style="width: 150px">
+                                    <p style="padding-bottom: 5px;margin-bottom: 0px;">
+                                        Name of signatory:
+                                    </p>
+                                </td>
+                                <td>
+                                    <p style="padding-bottom: 5px;margin-bottom: 0px;">
+                                        ______________________________________
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 150px">
+                                    <p style="padding-bottom: 5px;margin-bottom: 0px;">
+                                        Job title:
+                                    </p>
+                                </td>
+                                <td>
+                                    <p style="padding-bottom: 5px;margin-bottom: 0px;">
+                                        ______________________________________
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 150px">
+                                    <p style="padding-bottom: 5px;margin-bottom: 0px;">
+                                        Signature of signatory:
+                                    </p>
+                                </td>
+                                <td>
+                                    <p style="padding-bottom: 32px;">
+                                        ______________________________________
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p style="padding-bottom: 75px;">
+                                        Company Seal:
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p style="padding-bottom: 6px;">
+                                        Consent of employee:
+                                    </p>
+                                </td>
+                            </tr>
+                            
+
+                        </tbody>
+                    </table>
+                </td>
+                
+            </tr>
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellpadding="3" cellspacing="0" >
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>
+                                        Name: <%- fullName %> 
+                                    </p>
+                                </td>
+                                <td style="text-align: right;">
+                                    <p>
+                                        Signature: ________________________________
+                                    </p>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <div class="page-footer copyrights" style="padding: 0 40px;">
+        <div style="white-space: normal;">
+            Private and confidential
+        </div>
+    </div>
+</body>
+
+</html>
