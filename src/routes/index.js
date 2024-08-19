@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const pdfRoutes = require('./pdfRoutes')
+const pdfRoutes = require('./pdfRoutes.js')
 router.use('/pdf', pdfRoutes);
 
 // const userRoutes = require('./userRoutes');
