@@ -6,10 +6,14 @@ const app = express();
 const port = process.env.PORT || 3000;
 const routes = require('./src/routes');
 const errorMiddleware = require('./src/middlewares/errorHandler');
+const path = require('path');
 
 app.use(express.json());
 app.use('/api', routes);
 app.use(errorMiddleware);
+
+app.set('view engine', 'ejs'); // Set the view engine to EJS
+app.set('views', path.join(__dirname, '/src/public/views')); // Set the directory where your EJS templates are stored
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
