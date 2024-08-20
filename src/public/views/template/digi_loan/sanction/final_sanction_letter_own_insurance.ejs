@@ -53,6 +53,57 @@
             page-break-before: always;
         }
 
+        @media print {
+            @page {
+                size: A4 !important;
+                margin-top: 2mm;
+                margin-right: 3mm;
+                margin-bottom: 2mm;
+                margin-left: 3mm;
+            }
+
+            body {
+                position: relative;
+                color: #000000;
+                font-size: 14px;
+            }
+
+            .page-break-after {
+                page-break-after: always;
+            }
+
+            .page-break-before {
+                page-break-before: always;
+            }
+
+            tfoot {
+                height: 100px;
+            }
+        }
+
+        .fixed-tfoot {
+            position: fixed;
+            bottom: -30px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .fixed-tfoot .copyrights {
+            width: 21cm;
+            height: 29.7cm;
+            margin: 0 auto;
+            font-size: 10px;
+        }
+
+        tfoot {
+            height: 100px;
+        }
+
+        .fixed-tfoot tr td {
+            vertical-align: bottom;
+        }
+
         table {
             position: relative;
             height: 100%;
@@ -133,65 +184,6 @@
             margin-bottom: 2.5px;
         }
 
-
-        
-
-
-
-        
-
-        @media print {
-            @page {
-                size: A4 !important;
-                /* padding-bottom: 20px !important;
-					padding-left: 20px !important;
-					padding-right: 20px !important; */
-                margin-top: 2mm;
-                margin-right: 3mm;
-                margin-bottom: 2mm;
-                margin-left: 3mm;
-            }
-
-            
-
-            .page-break-after {
-                page-break-after: always;
-            }
-
-            .page-break-before {
-                page-break-before: always;
-            }
-
-            tfoot {
-                height: 100px;
-            }
-        }
-
-        .fixed-tfoot {
-            position: fixed;
-            bottom: -30px;
-            left: 0;
-            width: 100%;
-            z-index: 1;
-        }
-
-        .fixed-tfoot .copyrights {
-            width: 21cm;
-            height: 29.7cm;
-            margin: 0 auto;
-            font-size: 10px;
-        }
-
-        tfoot {
-            height: 100px;
-        }
-
-        .fixed-tfoot tr td {
-            vertical-align: bottom;
-        }
-
-       
-
         .row-wrapper {
             display: block;
             border-bottom: 1px dashed #d5d5d5;
@@ -233,7 +225,7 @@
 
 <body>
     <table width="100%" border="0" cellpadding="3" cellspacing="0">
-        
+
         <tbody style="padding-bottom: 30px;">
             <tr>
                 <td
@@ -244,14 +236,16 @@
             <tr>
                 <td>
                     <p style="line-height: 1.6;">
-                        Dear 
+                        Dear
                     </p>
 
                     <p style="color: #DC0032; font-weight: 700; line-height: 1.6;">
                         Your Personal Instalment Loan
                     </p>
-                    <p style="line-height: 2.6;">
-                        Thank you for choosing Absa Bank (Mauritius) Limited for your personal loan application. We are pleased to share that your application has been sanctioned for __________________. The details of the loan are as follows:.
+                    <p style="line-height: 1.6;">
+                        <br>
+                        <br>
+                        <br>
                     </p>
                 </td>
             </tr>
@@ -267,7 +261,7 @@
                 </td>
                 <td width="50%" style="padding: 0 5px;">
                     <p style="line-height: 1.6;">
-                        
+
                     </p>
                 </td>
             </tr>
@@ -279,7 +273,7 @@
                 </td>
                 <td width="50%" style="padding: 0 5px;">
                     <p style="line-height: 1.6;">
-                       
+
                     </p>
                 </td>
             </tr>
@@ -291,7 +285,7 @@
                 </td>
                 <td width="50%" style="padding: 0 5px;">
                     <p style="line-height: 1.6;">
-                       
+
                     </p>
                 </td>
             </tr>
@@ -303,7 +297,7 @@
                 </td>
                 <td width="50%" style="padding: 0 5px;">
                     <p style="line-height: 1.6;">
-                        
+
                     </p>
                 </td>
             </tr>
@@ -315,7 +309,7 @@
                 </td>
                 <td width="50%" style="padding: 0 5px;">
                     <p style="line-height: 1.6;">
-                       
+
                     </p>
                 </td>
             </tr>
@@ -331,7 +325,7 @@
                 </td>
                 <td width="50%" style="padding: 0 5px;">
                     <p style="line-height: 1.6;">
-                        Prime Lending Rate of the Bank is presently at 7.45% per annum.
+                        
                     </p>
                 </td>
             </tr>
@@ -343,7 +337,7 @@
                 </td>
                 <td width="50%" style="padding: 0 5px;">
                     <p style="line-height: 1.6;">
-                        
+
                     </p>
                 </td>
             </tr>
@@ -355,7 +349,8 @@
                 </td>
                 <td width="50%" style="padding: 0 5px;">
                     <p style="line-height: 1.6;">
-                        2% (per annum) calculated on default instalment capital excluding interest payable thereon
+                        <br>
+                        <br>
                     </p>
                 </td>
             </tr>
@@ -366,72 +361,56 @@
                     </p>
                 </td>
                 <td width="50%" style="padding: 0 5px;">
-                    <p style="line-height: 1.6;">
-                        If salary pledge with Absa, An one time processing fee of MUR 0 will be deducted from your loan amount, before disbursement.
-                    </p>
-                    <p style="line-height: 1.6;">
-                        If Non-Absa salary account, An one time processing fee of _________________ will be deducted from your loan amount, before disbursement.
+                    <p style="line-height: 2.0;">
+                        <br>
+                        <br>
                     </p>
                 </td>
             </tr>
-          
-                <tr>
-                    <td width="50%" style="padding: 0 5px;">
-                        <p style="line-height: 1.6;">
-                            Insurance Premium
-                        </p>
-                    </td>
-                    <td width="50%" style="padding: 0 5px;">
-                        <p style="line-height: 1.6;">
-                            One-time insurance premium towards _________________ of  _________________ will be deducted from your loan amount, before disbursement
-                        </p>
-                    </td>
-                </tr>
-              
-                    <tr>
-                        <td width="50%" style="padding: 0 5px;">
-                            <p style="line-height: 1.6;">
-                                Indicative instalment amount (including Interest).
-                            </p>
-                            <p style="line-height: 1.6;">
-                                First Instalment Date 
-                            </p>
-                            <p style="line-height: 1.6;">
-                                 
-                                The instalment amount will vary in line with changes in the Interest rate, where
-                                applicable.
-                            </p>
-                        </td>
-                        <td width="50%" style="padding: 0 5px;">
-                            <p style="line-height: 1.6;">
-                                _________________
-                            </p>
-                            <p style="line-height: 1.6;">
-                                _________________
-                            </p>
-                            <p style="line-height: 1.6;">
-                                 <br />
-                                    You authorize us to debit your Account for the ﬁrst instalment amount, as provided
-                                    above, and for the subsequent instalment amounts, on the of each month, until full and ﬁnal satisfaction of the outstanding loan amount.
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="50%" style="padding: 0 5px;">
-                            <p style="line-height: 1.6;">
-                                Term of the Loan (in months)
-                            </p>
-                        </td>
-                        <td width="50%" style="padding: 0 5px;">
-                            <p style="line-height: 1.6;">
-                               
-                            </p>
-                        </td>
-                    </tr>
+
+            <tr>
+                <td width="50%" style="padding: 0 5px;">
+                    <p style="line-height: 1.6;">
+                        Indicative instalment amount (including Interest).
+                    </p>
+                    <p style="line-height: 1.6;">
+                        First Instalment Date
+                    </p>
+                    <p style="line-height: 1.6;">
+                        The instalment amount will vary in line with changes in the Interest rate, where
+                        applicable.
+                    </p>
+                </td>
+                <td width="50%" style="padding: 0 5px;">
+                    <p style="line-height: 1.6;">
+                        &#8205;
+                    </p>
+                    <p style="line-height: 1.6;">
+                        &#8205;
+                    </p>
+                    <p style="line-height: 1.6;">
+                        <br>
+                        <br>
+                        <br>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%" style="padding: 0 5px;">
+                    <p style="line-height: 1.6;">
+                        Term of the Loan (in months)
+                    </p>
+                </td>
+                <td width="50%" style="padding: 0 5px;">
+                    <p style="line-height: 1.6;">
+
+                    </p>
+                </td>
+            </tr>
         </tbody>
     </table>
     <table width="100%" border="0" cellpadding="3" cellspacing="0" class="page-break-before">
-       
+
         <tbody style="padding-bottom: 30px;">
             <tr>
                 <td>
@@ -571,7 +550,7 @@
         </tbody>
     </table>
     <table width="100%" border="0" cellpadding="3" cellspacing="0" class="page-break-before">
-        
+
         <tbody>
             <tr>
                 <td style="padding-bottom: 30px;">
@@ -628,7 +607,7 @@
                     </p>
                     <p style="line-height: 1.6;">
                         If you have opted to choose the insurance premiums during your loan application, we will be
-                        deducting the applicable one-time premium against the loan amount disbursed. If you are willing
+                        deducting the applicable one time premium against the loan amount disbursed. If you are willing
                         to pledge any other insurance policy, it should be equal in amount and not less than the value
                         of your Loan for the term of this agreement, and you will be required to provide us with proof,
                         and that you have taken up the requisite insurance policies and you agree to pay the said
@@ -713,10 +692,12 @@
     </table>
 
     <table width="100%" border="0" cellpadding="3" cellspacing="0" class="page-break-before">
-        
+
         <tbody>
-            <tr >
-                <td >
+            <tr>
+                <td>
+                    <br />
+                    <br />
                     <p style="padding-bottom: 20px;">
                         Personal Loan Agreement
                     </p>
@@ -823,7 +804,7 @@
             </tr>
 
             <table width="100%" border="0" cellpadding="3" cellspacing="0">
-                <tr >
+                <tr>
                     <td width="60%">
                         <div style="margin-bottom: 3px; margin-top: 15px; font-weight: 700;">
                             ______________________________
@@ -833,7 +814,7 @@
                         </div>
                     </td>
                     <td width="40%">
-                         <div style="margin-bottom: 3px; margin-top: 15px; font-weight: 700;">
+                        <div style="margin-bottom: 3px; margin-top: 15px; font-weight: 700;">
                             ______________________________
                         </div>
                         <div style="margin-bottom: 15px; font-weight: 700;">
@@ -855,13 +836,17 @@
                             ______________________________
                         </div>
                         <div style="margin-bottom: 15px; font-weight: 700;">
-                            Name & title
+                            Borrower's Name & Title
                         </div>
                     </td>
                 </tr>
                 <tr>
                     <td width="50%">
-                        <div style="margin-bottom: 3px; margin-top: 15px; font-weight: 700;">
+                        <div style="margin-bottom: 0px; margin-top: 0px; font-weight: 200;">
+                             <img src="data:image/png;base64,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"
+                              alt="Red dot"  height="40">
+                        </div>
+                        <div style="margin-bottom: 3px; margin-top: 0px; font-weight: 700;">
                             ______________________________
                         </div>
                         <div style="margin-bottom: 15px; font-weight: 700;">
@@ -869,36 +854,24 @@
                         </div>
                     </td>
                     <td width="50%">
-                        <div style="margin-bottom: 3px; margin-top: 15px; font-weight: 700;">
+                        <div style="margin-bottom: 0px; margin-top: 15px; font-weight: 300;">
+                            Mr. Rajesh Parameswaran
+                        </div>
+                        <div style="margin-bottom: 0px; margin-top: 5px; font-weight: 300;">
+                            Vice President, Digital
+                        </div>
+                        <div style="margin-bottom: 3px; margin-top: 0px; font-weight: 700;">
                             ______________________________
                         </div>
+                        
                         <div style="margin-bottom: 15px; font-weight: 700;">
-                            Name & title
+                            Bank Authorised Personal Name & Title
                         </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p style="line-height: 1.6; margin-top: 70px;">
-                            <b>For and on behalf of Absa Bank (Mauritius) Limited</b>
-                        </p>
                     </td>
                 </tr>
             </table>
-
-
         </tbody>
     </table>
-
-
-    <!-- <div style="position: fixed; bottom: 15px; width: 100%; left: 10px; font-size: 10px; height: 29.7cm; margin: 0 auto;">
-        <div style="white-space: normal;">
-            Absa Bank (Mauritius) Limited (registered number C10068913). Absa Bank (Mauritius) Limited is regulated by
-            the Bank of Mauritius and the Financial Services Commission.
-            <br />
-            MUR – SLD – Digital (Retail) – Digi Loan (Unsecured) – V.10.23
-        </div>
-    </div> -->
 </body>
 
 </html>
