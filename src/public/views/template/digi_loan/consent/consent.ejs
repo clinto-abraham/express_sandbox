@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Absa Statement</title>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('/fonts/Source_Sans_Pro/sourcesanspro-bold-webfont.woff2') format('woff2'),
+                url('/fonts/Source_Sans_Pro/sourcesanspro-bold-webfont.woff') format('woff');
+            font-weight: 700;
+            font-style: normal;
+
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.woff2') format('woff2'),
+                url('/fonts/Source_Sans_Pro/sourcesanspro-regular-webfont.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+
+        }
+
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('/fonts/Source_Sans_Pro/sourcesanspro-semibold-webfont.woff2') format('woff2'),
+                url('/fonts/Source_Sans_Pro/sourcesanspro-semibold-webfont.woff') format('woff');
+            font-weight: 600;
+            font-style: normal;
+
+        }
+
+        body {
+            position: relative;
+            color: #000000;
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            /* font-size: 12px; */
+            text-rendering: optimize-speed;
+            -webkit-print-color-adjust: exact !important;
+        }
+
+        /* .footer-fixed-wealth {
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+		} */
+
+
+        .fn {
+            font-weight: normal !important;
+        }
+
+        /* table {
+				border-collapse: collapse;
+	
+			}
+	
+			tr {
+				page-break-inside: avoid;
+				page-break-after: auto
+			}
+	
+			thead th {
+				text-align: left;
+				font-size: 14px;
+				font-weight: 400;
+			} */
+
+        /* table { page-break-inside:auto; }
+			tr    { page-break-inside:avoid; page-break-after:auto }
+			thead { display:table-header-group }
+			tfoot { display:table-footer-group }         */
+        .page-break-after {
+            page-break-after: always;
+        }
+
+        .page-break-before {
+            page-break-before: always;
+        }
+
+        @media print {
+
+            /* table { page-break-after:auto }
+				tr    { page-break-inside:avoid; page-break-after:auto }
+				td    { page-break-inside:avoid; page-break-after:auto }
+				thead { display:table-header-group }
+				tfoot { display:table-footer-group } */
+            @page {
+                size: A4 !important;
+                /* padding-bottom: 20px !important;
+					padding-left: 20px !important;
+					padding-right: 20px !important; */
+                margin-top: 2mm;
+                margin-right: 3mm;
+                margin-bottom: 2mm;
+                margin-left: 3mm;
+            }
+
+            body {
+                position: relative;
+                color: #000000;
+                /* font-family: "Arial", sans-serif; */
+                font-size: 14px;
+            }
+
+            .page-break-after {
+                page-break-after: always;
+            }
+
+            .page-break-before {
+                page-break-before: always;
+            }
+
+            tfoot {
+                height: 100px;
+            }
+        }
+
+        .fixed-tfoot {
+            position: fixed;
+            bottom: -30px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        /* .fixed-thead {
+				position: fixed;
+				right: 0;
+				left: auto;
+				top: 0;
+				z-index: 999;
+			} */
+
+        /* .pt-80 {
+				padding-top: 80px;
+			} */
+
+        .fixed-tfoot .copyrights {
+            width: 21cm;
+            height: 29.7cm;
+            margin: 0 auto;
+            font-size: 10px;
+        }
+
+        tfoot {
+            height: 100px;
+        }
+
+        .fixed-tfoot tr td {
+            vertical-align: bottom;
+        }
+
+        table {
+            position: relative;
+            height: 100%;
+        }
+
+        /* .terms-content h3 {
+				font-size: 12px;
+			}
+	
+			.terms-content p {
+				font-size: 12px;
+				margin-bottom: 10px;
+			}
+	
+			.terms-content ul li {
+				font-size: 12px;
+				margin-bottom: 5px;
+			} */
+
+        .td-width {
+            width: 33.33% !important;
+            padding-right: 10px;
+        }
+
+        table tr td {
+            word-break: break-word;
+            word-wrap: break-word;
+        }
+
+        table tr td,
+        table tr th {
+            font-size: 12px;
+        }
+
+        table tr td h2 {
+            font-size: 12px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        table tr td h2.title {
+            font-size: 14px;
+        }
+
+        table tr td .label {
+            font-size: 10px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        table tr td .value {
+            font-size: 10px;
+            word-break: break-word;
+            word-wrap: break-word;
+        }
+
+        table tbody tr td {
+            vertical-align: top;
+        }
+
+
+        .terms-content * {
+            font-size: 8px !important;
+        }
+
+        .terms-content h2 {
+            font-size: 8px;
+            margin-top: 2.5px;
+            margin-bottom: 2.5px;
+        }
+
+        .terms-content h3 {
+            font-size: 8px;
+            margin-top: 2.5px;
+            margin-bottom: 2.5px;
+        }
+
+        .terms-content p {
+            font-size: 8px;
+            margin-top: 2.5px;
+            margin-bottom: 2.5px;
+        }
+
+        .terms-content ul {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .terms-content ul li,
+        .terms-content ol li {
+            font-size: 8px;
+            margin-bottom: 2.5px;
+        }
+
+        .row-wrapper {
+            display: block;
+            border-bottom: 1px dashed #d5d5d5;
+            clear: both;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+        .correspondence-addr .row-wrapper:last-child {
+            border-bottom: 0;
+        }
+
+        .row-wrapper .tr-row {
+            display: table;
+            width: 100%;
+        }
+
+        .row-wrapper .tr-row .td-width {
+            display: table-cell;
+            vertical-align: top;
+            max-width: 33.33% !important;
+            width: 33.33% !important;
+            min-width: 33.33% !important;
+        }
+
+        .thead-group {
+            display: table-header-group;
+        }
+
+        /* .tfooter-group {
+			display: table-footer-group;
+		} */
+        .page-footer {
+            position: fixed;
+            bottom: 15px;
+            width: 100%;
+            left: 10px;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="margin-bottom: 8rem;">
+
+    </div>
+    <table width="100%" border="0" cellpadding="3" cellspacing="0">
+        <tbody>
+            <tr>
+                <td
+                    style="font-weight: 800; font-size: 30px; color: #DC0032;font-family: 'Source Sans Pro', Arial, sans-serif; letter-spacing: 1px;">
+                    Customer Consent Form
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+
+                    <p>
+                        Customer Signature : 
+                    </p>
+                    <p>
+                        Customer Name &nbsp; &nbsp; &nbsp; : 
+                    </p>
+                    <p>
+                        Date &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;: 
+                    </p>
+
+                    <br/>
+                    <p>
+                        [Please sign above to indicate your consent and agreement.]
+                    </p>
+                    <p>
+                        (Note: The customer is required to sign and date the form to confirm their understanding and agreement to the Terms & Conditions.)
+                    </p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+</body>
+
+
+
+</html>

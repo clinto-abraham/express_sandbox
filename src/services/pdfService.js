@@ -89,11 +89,11 @@ const createPDF = (req) => {
         switch (doc_type) {
             case 'salary':
 
-                file_path = `src/public/views/template/digi_loan/salary/${'salary_pledge'}.ejs`;
+                file_path = `src/public/views/template/digi_loan/salary/${'salary_transient'}.ejs`;
                 sample_data = retail_mortgage_sample_data;
-                download_path = 'download/digi_loan/salary_pledge.pdf';
-                headerTemplate = headerTemplate_Retail_Mortgage;
-                footerTemplate = footerTemplate_Retail_Mortgage;
+                download_path = 'download/digi_loan/salary_transient.pdf';
+                headerTemplate = null;
+                footerTemplate = null;
                 break;
 
             case 'sanction':
@@ -178,6 +178,15 @@ const createPDF = (req) => {
                 download_path = 'download/retail/retail_mortgage.pdf';
                 headerTemplate = headerTemplate_Retail_Mortgage;
                 footerTemplate = footerTemplate_Retail_Mortgage;
+                break;
+
+            case 'consent':
+
+                file_path = `src/public/views/template/digi_loan/consent/${'consent'}.ejs`;
+                sample_data = null;
+                download_path = 'download/digi_loan/consent.pdf';
+                headerTemplate = headerTemplate_final_sanction_letter;
+                footerTemplate = footerTemplate_final_sanction_letter;
                 break;
 
             default:
